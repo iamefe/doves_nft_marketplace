@@ -51,7 +51,6 @@ const CreateNFT = () => {
 
       setLoadingMsg("Intializing transaction...");
       setFileUrl(metadataURI);
-
       await mintNFT(nft);
 
       resetForm();

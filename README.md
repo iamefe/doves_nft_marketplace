@@ -1,4 +1,4 @@
+Live site - https://doves-nft.netlify.app
 Use the Mumbai network to test.
 
-aoserefemhen@gmail.com
-alchemy.com
+Contact me - aoserefemhen@gmail.com

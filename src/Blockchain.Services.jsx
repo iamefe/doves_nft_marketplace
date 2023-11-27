@@ -33,6 +33,7 @@ const connectWallet = async () => {
 const isWallectConnected = async () => {
   try {
     if (!ethereum) return reportError("Please install Metamask");
+    // if (!ethereum) return null;
     const accounts = await ethereum.request({ method: "eth_accounts" });
 
     window.ethereum.on("chainChanged", (chainId) => {
@@ -48,9 +49,11 @@ const isWallectConnected = async () => {
       setGlobalState("connectedAccount", accounts[0].toLowerCase());
     } else {
       setGlobalState("connectedAccount", "");
+      // return null;
       reportError("Please connect wallet.");
     }
   } catch (error) {
+    // return null;
     reportError(error);
   }
 };
@@ -81,6 +84,7 @@ const getAllNFTs = async () => {
     setGlobalState("transactions", structuredNfts(transactions));
   } catch (error) {
     reportError(error);
+    // return null;
   }
 };
 

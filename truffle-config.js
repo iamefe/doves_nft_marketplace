@@ -20,6 +20,14 @@ module.exports = {
       timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
     },
+    mumbai: {
+      provider: () =>
+        new HDWalletProvider(process.env.MNEMONIC, process.env.API_KEY),
+      network_id: 80001,
+      gas: 5500000,
+      networkCheckTimeout: 10000,
+      timeoutBlocks: 200,
+    },
     // sepolia: {
     //   provider: () =>
     //     new HDWalletProvider(process.env.MNEMONIC, process.env.API_KEY),
@@ -30,14 +38,6 @@ module.exports = {
     //   gasLimit: 2500000,
     //   skipDryRun: true,
     // },
-    mumbai: {
-      provider: () =>
-        new HDWalletProvider(process.env.MNEMONIC, process.env.API_KEY),
-      network_id: 80001,
-      gas: 5500000,
-      networkCheckTimeout: 10000,
-      timeoutBlocks: 200,
-    },
   },
   contracts_directory: "./src/contracts/",
   contracts_build_directory: "./src/abis/",
